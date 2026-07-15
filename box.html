@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>larbman</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:url("https://wallpapers.com/images/hd/pure-black-background-py9pa0f1mlsscm9s.jpg");
+    background-size:cover;
+    background-position:center;
+    overflow-x:hidden;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    padding:40px 20px;
+    animation:fade 2s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+h1{
+    color:#0015ff;
+    font-size:60px;
+    text-shadow:0 0 20px #5500ff;
+}
+
+h2{
+    margin-top:20px;
+    font-size:38px;
+}
+
+p{
+    font-size:24px;
+    margin-top:10px;
+}
+
+.gif{
+    width:320px;
+    border-radius:20px;
+    margin-top:30px;
+    box-shadow:0 0 20px #0307ff;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#016bff;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#00d9ff;
+    transform:scale(1.08);
+}
+
+#wish{
+    margin-top:20px;
+    font-size:22px;
+    color:#00ffff;
+}
+
+#gift{
+    display:none;
+    margin-top:25px;
+}
+
+#gift img{
+    width:280px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgb(0, 255, 242);
+}
+
+/* ลูกโป่ง */
+
+
+
+
+@keyframes float{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-120vh);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1> พบลาบไม่ทราบชื่อ </h1>
+
+<h2>mohoraga</h2>
+
+<p>0000</p>
+
+<p>GGEZ</p>
+
+<img class="gif" src="gojo.png">
+
+<br>
+
+<button onclick="showWish()"> กดเพื่อโดนด่า</button>
+
+<p id="wish"></p>
+
+<button onclick="showGift()">🎁 เปิดของขวัญ</button>
+
+<div id="gift">
+<img url="mohoraga.png">
+</div>
+
+</div>
+
+<script>
+
+function showWish(){
+
+document.getElementById("wish").innerHTML=
+"หน้าลาบ";
+
+}
+
+function showGift(){
+
+let gift=document.getElementById("gift");
+
+if(gift.style.display=="block"){
+gift.style.display="none";
+}
+else{
+gift.style.display="block";
+}
+
+}
+
+// สร้างลูกโป่ง
+
+const colors=[
+"#ff4d6d",
+"#ff85a1",
+"#c77dff",
+"#9d4edd",
+"#80ed99",
+"#4cc9f0",
+"#ffd60a"
+];
+
+for(let i=0;i<25;i++){
+
+let b=document.createElement("div");
+
+b.className="balloon";
+
+b.style.left=Math.random()*100+"vw";
+
+b.style.background=colors[Math.floor(Math.random()*colors.length)];
+
+b.style.animationDuration=(5+Math.random()*5)+"s";
+
+b.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(b);
+
+}
+
+</script>
+
+</body>
+<button id="btn" onclick="toggleMusic()">🎵 เปิดเพลง</button>
+
+<audio id="music" loop>
+    <source src="where.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("music");
+const btn = document.getElementById("btn");
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+        btn.innerHTML = "⏸️ หยุดเพลง";
+    }else{
+        music.pause();
+        btn.innerHTML = "🎵 เปิดเพลง";
+    }
+
+}
+</script>
+
+
+</script>
+</audio>
+
+</script>
+    
+</div>
+</html>
